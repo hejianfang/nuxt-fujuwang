@@ -1,0 +1,32 @@
+html, body
+{
+  background-color: #fff;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  height: 100vh;
+  margin: 0 auto;
+  width: 1349px;
+}
+
+footer
+{
+  text-align: center;
+}
+
+a, a:hover, a:focus, a:visited
+{
+  color: #000;
+  text-decoration: none;
+}
+ul li{
+  list-style: none;
+}
+.my-pic {
+  display: block;
+  width: 100%;
+}
+.el-checkbox{
+  margin-right: 30px;
+}
+
