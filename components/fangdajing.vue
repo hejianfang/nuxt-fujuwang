@@ -6,7 +6,7 @@
            <ul>
                <li><img src="../assets/img/二手1.png"></li>
                <li><img src="../assets/img/er2.png.png"></li>
-               <li><img src="../assets/img/er3.png.png"></li>
+               <li><img src="../assets/img/er2.png.png"></li>
            </ul>
        </div>
    </div>
