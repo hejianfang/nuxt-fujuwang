@@ -25,7 +25,7 @@
                     rightBox.style.display = "none"
                     function mouseIn(ev) {
                         scale.style.display = "block";
-                        leftBox.addEventListener("mousemove", mouseMove);
+                        document.addEventListener("mousemove", mouseMove);
                         leftBox.addEventListener("mouseleave", mouseOut);
                     }
                     el._mouseIn = mouseIn;
