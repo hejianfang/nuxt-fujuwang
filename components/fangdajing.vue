@@ -1,5 +1,5 @@
 <template>
-    <div class="img-container" v-scale>
+    <div class="img-containe" v-scale>
         <div class="smallImg _left-box">
             <img src="../assets/img/二手1.png">
             <div class="scale _scale"></div>
@@ -27,17 +27,15 @@
                         scale.style.display = "block";
                         leftBox.addEventListener("mousemove", mouseMove);
                         leftBox.addEventListener("mouseleave", mouseOut);
-                        rightBox.style.display = "block"
                     }
-
                     el._mouseIn = mouseIn;
-
                     function mouseMove(ev) {
+                        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
                         ev = ev || event;
                         mouseX = ev.clientX - el.offsetLeft;
-                        mouseY = ev.clientY - el.offsetTop;
-                        let scaleLeft = 0;
+                        mouseY = ev.clientY - el.offsetTop +scrollTop;
                         let scaleTop = 0;
+                        let scaleLeft = 0;
                         if (mouseX > leftBox.offsetWidth - scale.offsetWidth / 2) {
                             scaleLeft = leftBox.offsetWidth - scale.offsetWidth;
                             scale.style.left = scaleLeft + "px";
@@ -50,7 +48,8 @@
                             scaleLeft = mouseX - scale.offsetWidth / 2;
                             scale.style.left = scaleLeft + 'px';
                         }
-                        if (mouseY > leftBox.offsetHeight - scale.offsetHeight / 2) {
+                        if (mouseY > leftBox.offsetHeight - scale.offsetHeight/2)
+                        {
                             scaleTop = leftBox.offsetHeight - scale.offsetHeight;
                             scale.style.top = scaleTop + 'px';
                         }
@@ -59,9 +58,10 @@
                             scale.style.top = scaleTop + 'px';
                         }
                         else {
-                            scaleTop = mouseY - scale.offsetHeight / 2;
+                            scaleTop = mouseY - scale.offsetHeight/2;
                             scale.style.top = scaleTop + 'px';
                         }
+                        rightBox.style.display = "block";
                         rightPic.style.transform = `translate(${-scaleLeft * 2.5}px,${-scaleTop * 2.5}px)`
 
                     }
@@ -71,7 +71,6 @@
                         rightBox.style.display = "none"
                         leftBox.removeEventListener("mousemove", mouseMove);
                     }
-
                     leftBox.addEventListener("mouseenter", mouseIn)
                 },
                 unbind(el) {
@@ -84,44 +83,37 @@
 </script>
 
 <style scoped lang="less">
-    .img-container {
-        width: 1100px;
-        margin: 0 auto;
+    .img-containe {
         position: relative;
-        min-height: 100vh;
         .smallImg {
-            position: absolute;
-            left: 0px;
-            top: 50px;
+            position: relative;
             width: 592px;
             height: 442px;
+            overflow: hidden;
             img {
                 display: block;
-                width: 592px;
-                height: 442px;
+                width: 100%;
+                height: 100%;
             }
             .scale {
                 position: absolute;
-                left: 0px;
-                top: 0;
+                cursor: move;
                 width: 237px;
-                height: 217px;
-                background: rgba(0, 0, 0, .3);
+                height: 216px;
+                background: rgba(0,0,0,.2);
             }
         }
         .bigImg {
-            overflow: hidden;
             position: absolute;
-            left: 600px;
-            top: 50px;
+            left: 55%;
+            top: 0;
             width: 592px;
             height: 542px;
-            border: 1px solid #000;
+            overflow: hidden;
             img {
                 display: block;
                 width: 1480px;
-                height: 1105px;
-                transform: translate(0, 0);
+                height: 1105px
             }
         }
     }

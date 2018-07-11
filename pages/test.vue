@@ -1,6 +1,7 @@
 <template>
    <div>
-       <fangdajing></fangdajing>
+
+       <swicthpic></swicthpic>
    </div>
 </template>
 
@@ -10,10 +11,12 @@
      import header2 from '~/components/header2'
      import myBox from '~/components/my-box'
      import fangdajing from '~/components/fangdajing'
+     import swicthpic from '~/components/swicthpic'
     export default {
         name: "banner",
          components: {
-             fangdajing
+             fangdajing,
+             swicthpic
          },
 
     }
