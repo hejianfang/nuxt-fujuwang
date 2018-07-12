@@ -1,7 +1,6 @@
 <template>
    <div>
-
-
+       <mapTab></mapTab>
    </div>
 </template>
 
@@ -12,7 +11,6 @@
          components: {
              mapTab
          },
-
     }
 </script>
 
