@@ -21,13 +21,8 @@
                 <!--<h1>{{used_detail.jibenxinxi.title}}</h1>-->
             </div>
             <fangdajing></fangdajing>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-
+            <swicthpic></swicthpic>
+            <mapTab></mapTab>
         </div>
 
 
@@ -39,13 +34,15 @@
     import header2 from '~/components/header2'
     import MyFooter from '~/components/Footer.vue'
     import header3 from '~/components/header3.vue'
+    import swicthpic from '~/components/swicthpic'
     import axios from '~/plugins/axios'
     import api from '~/myApi'
     import fangdajing from '~/components/fangdajing'
+    import mapTab from '~/components/mapTab'
     export default {
         name: "detil",
         components:{
-            header2,  MyFooter,header3,fangdajing
+            header2,  MyFooter,header3,fangdajing,swicthpic,mapTab
         },
         async asyncData(context) {
             // let  used_detail = await axios.get(api.paramToUrl(api.used_detail,{id:context.params.id}))

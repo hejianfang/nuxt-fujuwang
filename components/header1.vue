@@ -59,7 +59,7 @@
         },
         methods:{
             change(e){
-                this.index=e
+                this.index = e
                 switch (e) {
                     case 0:
                       this.value='回民区'

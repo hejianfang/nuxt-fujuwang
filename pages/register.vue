@@ -12,13 +12,13 @@
                     <div class="h1"><h1>创建账号</h1><a href="login">已有账号，立即登录</a></div>
                     <div class="tel"><i class="iconfont icon-shouji"></i><input type="tel" placeholder="请输入手机号" v-model="mobile"></div>
                     <div class="tell">
-                        <div class="tel1"><i class="iconfont icon-mima"></i><input type="tel" placeholder="请输入短信验证码">
+                        <div class="tel1"><i class="iconfont icon-mima"></i><input type="tel" placeholder="请输入短信验证码" v-model="tel">
                         </div>
                         <button class="btn" :disabled="canSend" v-text="btnText" @click="sendVerify"></button>
                     </div>
-                    <div class="tel"><i class="iconfont icon-mima"></i><input type="password" placeholder="请输入6-18位密码">
+                    <div class="tel"><i class="iconfont icon-mima"></i><input type="password" placeholder="请输入6-18位密码" v-model="password">
                     </div>
-                    <div class="tel"><i class="iconfont icon-nicheng"></i><input type="text" placeholder="请输入昵称"></div>
+                    <div class="tel"><i class="iconfont icon-nicheng"></i><input type="text" placeholder="请输入昵称" v-model="name"></div>
                     <button class="btn-zhuce">立即注册</button>
                     <div class="foot">
                         <p>点击立即注册，则表示您阅读并同意遵守</p>
@@ -44,6 +44,9 @@
                 btnText: "获取验证码",
                 isSending: false,
                 mobile: "",
+                tel:'',
+                password:'',
+                name: ""
             }
         },
         methods: {
